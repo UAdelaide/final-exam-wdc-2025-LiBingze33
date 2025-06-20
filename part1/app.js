@@ -148,11 +148,11 @@ app.get('/api/walkers/summary',async (req, res) => {
             `
 
         );
-        res.json(requests);
+        res.json(summary);
     }
     catch(err){
         console.log(err);
-        res.status(500).json({error:'cannot fetch requests'});
+        res.status(500).json({error:'cannot fetch summary'});
     }
 
 });
