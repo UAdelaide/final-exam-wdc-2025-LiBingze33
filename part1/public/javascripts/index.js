@@ -1,7 +1,7 @@
 const vueinst = Vue.createApp({
     data(){
         return{
-            img
+            dog_img_url:'',
         };
     }
 }).mount('#app');
