@@ -56,7 +56,7 @@ router.get('/me', (req, res) => {
 // });
 
 router.post('/login', async (req, res) => {
-  const {name, password } = req.body; //was initially using email but changed to 
+  const {name, password } = req.body; //was initially using email but changed to username as required for this task
 
   try {
     const [rows] = await db.query(`
