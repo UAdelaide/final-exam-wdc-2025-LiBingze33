@@ -87,6 +87,8 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
+
+
         async function logout(){ //gemerate a method for logout
           try{
             const response = await fetch('/api/users/logout',
