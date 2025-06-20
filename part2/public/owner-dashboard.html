@@ -103,11 +103,11 @@
         }
           async function checklogin() {
           try {
-            const res = await fetch('/api/users/me'{
+            const res = await fetch('/api/users/me',{
               credentials:"include"
             });
             if(!res.ok && res.status === 401){
-              window.localStorage.href = '/'
+              window.la.href = '/'
             }
           } catch (err) {
             error.value = 'Failed to check login';
