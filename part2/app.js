@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session'); //add the library we need for the session management
 const path = require('path');
 const db = require('./models/db');
-const{check_owners, check_walkers} = require("./middleware/auth")
+const{check_owners, check_walkers} = require("./middleware/auth");
 require('dotenv').config();
 
 const app = express();
