@@ -73,7 +73,7 @@ router.post('/login', async (req, res) => {
       username:rows[0].username, //might use in the future
       role:rows[0].role //will be used for this task to determine which html page to jump
     };
-    res.json({ message: 'Login successful', user: req.session.user });
+    res.json({ message: 'Login successful', user: req.session.user }); /
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
