@@ -90,7 +90,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        async function get_dogs(){
+        async function get_dogs(){ //the api to get dogs
           try{
             const res = await fetch('/api/owners/dogs',{
               credentials:'include'
