@@ -6,4 +6,9 @@
 #login label{
   display:block;
   margin-bottom:10px ;
+  padding: 20px;
+}
+#login input{
+  display:block;
+  margin-bottom:10px ;
 }
