@@ -75,7 +75,7 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE name = 'Guodong'), '2025-06-12 13:00:00', 60, 'Qingdao', 'completed');
                 `);
         }
-        const [rating_count] = await db.query('SELECT COUNT(*) AS count FROM WalkingRatings');
+        const [rating_count] = await db.query('SELECT COUNT(*) AS count FROM WalkRatings');
         if (rating_count[0].count === 0) {
             await db.execute(`
             INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
