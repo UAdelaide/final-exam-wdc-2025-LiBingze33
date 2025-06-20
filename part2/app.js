@@ -26,7 +26,7 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/owners', ownerRoutes);
 app.get('/api/dogs',async (req, res) => {
-    try{
+    try{ // Just get all the information from the dog tables
         const [dogs] = await db.query('SELECT dog_id, name, size, owner_id FROM Dogs');
         res.json(dogs);
     }
