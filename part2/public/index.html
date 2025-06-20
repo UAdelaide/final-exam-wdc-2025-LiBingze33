@@ -72,14 +72,15 @@
           message: 'Welcome to the Dog Walking Service!',
           username:'',  //will sync with the input box
           password:'',
-          dog_img_url:''
-        };
+          dog_img_url:'',
+          dogs        };
       },
       methods:{
         async get_dogs(){
           try{
             const response = await fetch('/api/dogs');
-            
+            const data = await response.json();
+
           }
           catch(err){
             console.log("Cannot get dog info")
