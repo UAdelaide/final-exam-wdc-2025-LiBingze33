@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session'); //add the library we need for the session management
 const path = require('path');
-const db = require('../models/db');
+const db = require('./models/db');
 require('dotenv').config();
 
 const app = express();
