@@ -5,7 +5,7 @@ const vueinst = Vue.createApp({
         };
         },
         mounted(){
-            fetch('')
+            fetch('https://dog.ceo/dog-api/documentation/random')
         }
 
 }).mount('#app');
