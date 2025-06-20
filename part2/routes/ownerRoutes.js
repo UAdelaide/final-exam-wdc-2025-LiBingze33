@@ -4,11 +4,10 @@ const db = require('../models/db');
 
 router.get('/dogs', async (req, res) => {
     if(!req.session.user){
-        return res.status(401)
+        return res.status(401); //will resolve the force browsing later
     }
   try {
-    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
-    res.json(rows);
+    cons
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
