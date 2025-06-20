@@ -54,6 +54,28 @@ let db;
     } catch (err) {
         console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
     }
+        const [user_count] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        if (user_count[0].count === 0) {
+            await db.execute(`
+            INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+            ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+            ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+            ('bingze', 'bingze@example.com', 'hashed789', 'owner'),
+            ('bingze123', 'bingze123@example.com', 'hashed789', 'owner');
+
+      `);
+        }
+    } catch (err) {
+        console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
+    }
+
+
+
+
+
+
+
+
 })();
 
 
