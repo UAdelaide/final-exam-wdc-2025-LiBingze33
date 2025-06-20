@@ -95,7 +95,7 @@
             const res = await fetch('/api/owners/dogs',{
               credentials:'include'
             });
-          dogs.value= await res.json();
+          dogs.value= await res.json(); //this will store both id and name for 
           }
           catch(err){
             console.log("cannot retrieve dogs", err)
