@@ -10,7 +10,9 @@ const vueinst = Vue.createApp({
             const data = await response.json;
             this dog_img_url = data.message;
             }
-        catch(err){{}}
+        catch(err){
+            console.log('Failed to load dog image')
+        }
         }
 
 }).mount('#app');
