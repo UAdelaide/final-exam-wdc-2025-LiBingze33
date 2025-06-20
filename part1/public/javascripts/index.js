@@ -4,7 +4,7 @@ const vueinst = Vue.createApp({
             dog_img_url:'',
         };
         },
-        mounted(){
+       async mounted(){
             fetch('https://dog.ceo/dog-api/documentation/random')
         }
 
