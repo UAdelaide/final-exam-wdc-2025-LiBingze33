@@ -47,11 +47,11 @@
               method:'POST',
               headers: {'Content-Type':'application/json'},
               body:JSON.stringify({
-                name:this.username,
+                name:this.username,         //send json back with name and password key
                 password:this.password
               })
             });
-            if(!response.ok){
+            if(!response.ok){ //if it is 
               alert("Login failed due to incorrect password")
               return;
             }
