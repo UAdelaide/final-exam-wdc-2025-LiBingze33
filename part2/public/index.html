@@ -51,11 +51,11 @@
                 password:this.password
               })
             });
-            if(!response.ok){ //if it is not 200 which means the credentials are correct
-              alert("Login failed due to incorrect password")
-              return;
+            if(!response.ok){ //if it is not 200 which means the credentials are wrong
+              alert("Login failed due to incorrect password") //alert the user
+              return; //end the funciton
             }
-            const data = await response.json();
+            const data = await response.json(); //otherwise we 
             const role = data.user.role;
             // alert(role);
             if(role === 'owner'){
