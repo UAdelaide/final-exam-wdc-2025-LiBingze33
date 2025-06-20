@@ -58,7 +58,7 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   const {name, password } = req.body; //was initially using email but changed to username as required for this task
 
-  try {
+  try {//check if the credentials are correct
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
