@@ -88,7 +88,7 @@
               const photo_data = await photo.json();
               dog.photo_url = photoData.message;
              }
-
+             this.dogs = data;
           }
           catch(err){
             console.log("Cannot get dog info")
