@@ -23,5 +23,7 @@ img{
     margin-top: 30px;
 }
 .wrap_form{
-    
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
