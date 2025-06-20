@@ -83,6 +83,7 @@ let db;
             (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Toutou') AND status = 'completed'),
             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
             5,
+            'good walker, very reliable'),
                 `);
         }
 
