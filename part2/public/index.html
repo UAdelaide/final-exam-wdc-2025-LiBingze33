@@ -54,7 +54,9 @@
             }
             const data = await response.json();
             const role = data.role;
-            if(role === 'owner')
+            if(role === 'owner'){
+              windows.location.href = '/'
+            }
           }
           catch(err){
             console.log(err);
