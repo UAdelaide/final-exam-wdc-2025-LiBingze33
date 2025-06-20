@@ -14,4 +14,4 @@ function check_walkers(req,res,next){
         res.redirect('/');
     }
 }
-module.exports = { check_owners, check_walkers }
+module.exports = { check_owners, check_walkers };
