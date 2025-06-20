@@ -70,8 +70,8 @@ router.post('/login', async (req, res) => {
     //if information is correct we can store user information in the session for authentication and for later time to check for the roles and assign different webpage to jump.
     req.session.user = {
       user_id: rows[0].user_id, //might use in the future
-      username:rows[0].username, //might use in the future
-      role:rows[0].role //will be used for this task to determine which html page to jump
+      username: rows[0].username, //might use in the future
+      role: rows[0].role //will be used for this task to determine which html page to jump
     };
     res.json({ message: 'Login successful', user: req.session.user }); //assign the whole session user object to user key in the JSON response so that client side can access it later
   } catch (error) {
