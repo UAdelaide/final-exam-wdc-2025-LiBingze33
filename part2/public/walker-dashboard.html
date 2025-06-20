@@ -58,6 +58,7 @@
         catch(err){
           console.log("Cannot check if i have logged in")
         }
+      }
       async function logout(){ //gemerate a method for logout
           try{
             const response = await fetch('/api/users/logout',
