@@ -81,6 +81,7 @@
           try{
             const response = await fetch('/api/dogs');
             const data = await response.json();
+            this.dog = data;
 
           }
           catch(err){
