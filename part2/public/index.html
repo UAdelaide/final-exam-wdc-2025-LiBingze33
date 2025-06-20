@@ -18,7 +18,7 @@
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a> -->
-
+<div class="form">
     <!-- Instead of allow user to choose to access the owner page or the walker page I choose to create a form with using vue3  -->
   <form @submit.prevent="login" id="login" class="bg-light"> <!-- prevent default submission so that do not have to reload the whole page -->
     <label>Username</label>
@@ -28,7 +28,7 @@
 
     <button type="submit">Log in</button>
   </form>
-
+</div>
 <!-- Put the table below the div with app to use Vue -->
 <div class="table_container">
 <h1>All Registerd Dogs</h1>
