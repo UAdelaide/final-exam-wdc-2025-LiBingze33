@@ -93,10 +93,7 @@ let db;
             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
             (SELECT user_id FROM Users WHERE username = 'bingze123'),
             4,
-            'good walker, very reliable'),
-
-
-
+            'Good job and take care of my guodong very well'),
 
                 `);
         }
