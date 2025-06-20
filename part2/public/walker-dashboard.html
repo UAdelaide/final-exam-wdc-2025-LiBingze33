@@ -53,7 +53,7 @@
            alert("Cannot fetch the user")
            return
           }
-          user
+          user.value = res.json()
         }
         catch(err){
           console.log("Cannot check if i have logged in")
