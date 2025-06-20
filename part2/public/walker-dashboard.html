@@ -46,7 +46,7 @@
         const message = ref('');
         const error = ref('');
         // const user = 3;
-        const user = ref('');
+        const user = ref('');//instead of hard code the user to 3, 
       async function getCurrentUser() {
         try{
           const res = await fetch('/api/users/me',{credentials:"include"});
