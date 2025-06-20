@@ -27,8 +27,8 @@
           <div class="mb-3">
             <label class="form-label">Select Your Dog</label>
             <select v-model="form.dog_id" type="number" class="form-control" required>
-              <option value="" selected disabled> --Choose a dog --</option>
-               <!-- was struggling to debug the value, as it is used for post method submission -->
+              <option value="" selected disabled> --Choose a dog --</option>  <!-- Walk request form -->
+               <!-- was struggling to debug the value, as it is used for another post method submission -->
               <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id"> {{dog.name}}</option>
 
               </select>
