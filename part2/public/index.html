@@ -58,7 +58,7 @@
             const data = await response.json(); //otherwise we retrieve the response
             const role = data.user.role;  //get the information we want from the json
             // alert(role);
-            if(role === 'owner'){
+            if(role === 'owner'){ //if the role is owner go to corresponding page
               window.location.href = '/owner-dashboard.html'
             }
             else if(role === 'walker'){
