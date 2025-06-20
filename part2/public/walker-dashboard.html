@@ -49,7 +49,7 @@
         const user = ref('');
       async function getCurrentUser() {
         try{
-          const res = await fetch('/api/user/me',{credentials:"include"});
+          const res = await fetch('/api/users/me',{credentials:"include"});
           if(!res.ok){
            alert("Cannot fetch the user")
            return
