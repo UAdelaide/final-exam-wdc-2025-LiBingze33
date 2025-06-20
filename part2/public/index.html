@@ -21,7 +21,7 @@
 <div class="wrap_form">
     <!-- Instead of allow user to choose to access the owner page or the walker page I choose to create a form with using vue3  -->
   <form @submit.prevent="login" id="login" class="form-horizontal bg-light"> <!-- prevent default submission so that do not have to reload the whole page -->
-    <label>Username</label>
+    <label class="form-label">Username</label>
     <input type="text" v-model="username" placeholder="Username" required>
     <label>Password</label>
     <input type="password" v-model="password" placeholder="Password" required>    <!-- When user types to these textbox, the vue-model could fetch and store inside the variable it created without the need to add event listener such as change or extra code to sync the input and variable -->
