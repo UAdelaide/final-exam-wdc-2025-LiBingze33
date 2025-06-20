@@ -15,6 +15,7 @@ function check_walkers(req,res,next){
         next();
     }
     else{
+    //if mismatched or not logged in, go back to login page
         res.redirect('/');
     }
 }
