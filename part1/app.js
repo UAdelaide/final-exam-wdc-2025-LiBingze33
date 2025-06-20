@@ -60,8 +60,6 @@ let db;
             ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 'Mike' , 'small'),
             ((SELECT user_id FROM Users WHERE username = 'bingze'), 'Toutou' , 'small'),
             ((SELECT user_id FROM Users WHERE username = 'bingze123'), 'Guodong' , 'small');
-
-
       `);
         }
 
