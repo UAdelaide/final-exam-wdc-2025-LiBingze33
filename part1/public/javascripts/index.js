@@ -4,7 +4,9 @@ const vueinst = Vue.createApp({
             dog_img_url:'',
         };
         },
-        mounted
+        mounted(){
+            fetch('')
+        }
 
 }).mount('#app');
 
