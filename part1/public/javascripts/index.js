@@ -5,7 +5,7 @@ const vueinst = Vue.createApp({
         };
         },
        async mounted(){
-            fetch('https://dog.ceo/dog-api/documentation/random')
+            const response = await fetch('https://dog.ceo/dog-api/documentation/random')
         }
 
 }).mount('#app');
