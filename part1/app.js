@@ -95,10 +95,8 @@ let db;
             (SELECT user_id FROM Users WHERE username = 'bingze123'),
             4,
             'Good job and take care of my guodong very well'
-            )
-            ;
-
-                `);
+            );
+`);
         }
 
 
