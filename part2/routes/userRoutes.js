@@ -84,6 +84,7 @@ router.post('/logout',function (req,res){
   if(err){
     return res.sendStatus(500);
   }
+  res.clearCookie('user.sid')
   });
 });
 
