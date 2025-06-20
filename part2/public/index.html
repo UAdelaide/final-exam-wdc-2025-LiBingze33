@@ -51,7 +51,7 @@
                 password:this.password
               })
             });
-            if(!response.ok){ //if it is 
+            if(!response.ok){ //if it is not 200 which means the credentials are correct
               alert("Login failed due to incorrect password")
               return;
             }
