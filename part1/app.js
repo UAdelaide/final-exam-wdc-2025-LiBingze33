@@ -84,7 +84,7 @@ let db;
             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
             (SELECT user_id FROM Users WHERE username = 'bingze'),
             5,
-            'good walker, very reliable'),
+            'good walker, very reliable')
 
 
             (
@@ -92,7 +92,7 @@ let db;
             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
             (SELECT user_id FROM Users WHERE username = 'bingze123'),
             4,
-            'Good job and take care of my guodong very well'),
+            'Good job and take care of my guodong very well')
 
                 `);
         }
