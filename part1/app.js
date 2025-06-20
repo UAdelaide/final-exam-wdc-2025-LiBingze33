@@ -139,7 +139,7 @@ app.get('/api/walkrequests/open',async (req, res) => {
 
 app.get('/api/walkers/summary',async (req, res) => {
     try{
-        const [requests] = await db.query("SELECT u.username AS walker_username,  ");
+        const [requests] = await db.query("SELECT u.username AS walker_username, COUNT ");
         res.json(requests);
     }
     catch(err){
