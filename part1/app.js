@@ -87,7 +87,7 @@ let db;
 
             INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
             (
-            (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = '') AND status = 'completed'),
+            (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Guodong') AND status = 'completed'),
             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
             5,
             'good walker, very reliable'),
