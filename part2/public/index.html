@@ -84,6 +84,7 @@
             const data = await response.json();
             //each dog is a object give them another property call photo_url
              for(let dog of data){
+              //use two try to 
               try{
               const photo = await fetch('https://dog.ceo/api/breeds/image/random');
               const photo_data = await photo.json();
