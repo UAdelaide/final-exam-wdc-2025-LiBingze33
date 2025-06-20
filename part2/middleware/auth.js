@@ -1,4 +1,4 @@
-//to make the login become more legit here is the middleware implementation
+// To make the login become more legit here is the middleware implementation
 function check_owners(req,res,next){
     // check the user is logged in and his role is owner
     if(req.session.user && req.session.user.role === 'owner'){
