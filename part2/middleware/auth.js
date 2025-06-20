@@ -5,7 +5,7 @@ function check_owners(req,res,next){
         next();
     }
     else{
-    //if mismatch or 
+    //if mismatch or not logged in, go back to login page
         res.redirect('/');
     }
 }
