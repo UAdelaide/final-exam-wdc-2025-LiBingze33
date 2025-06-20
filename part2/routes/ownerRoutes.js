@@ -8,7 +8,7 @@ router.get('/dogs', async (req, res) => {
     }
   try {
     const OwnerId = req.session.user.user_id;
-    const [dogs] = await db.query('SELECT ')
+    const [dogs] = await db.query('SELECT dog_id, name FROM Dogs where owner_id = ?', [OwnerId])
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
