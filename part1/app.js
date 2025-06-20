@@ -91,7 +91,8 @@ let db;
             (
             (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Guodong') AND status = 'completed'),
             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-            5,
+            (SELECT user_id FROM Users WHERE username = 'bingze123'),
+            4,
             'good walker, very reliable'),
 
 
