@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Dog of the day</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./javascripts/index.js" defer></script>
-<style>
-    a{
-        text-decoration: none;
-    }
-    body{
-        background-color: lime;
-    }
-    h1{
-        color:rgb(208, 246, 136)
-    }
-    ul{
-        display:flex;
-        justify-content: center;
-        list-style: none;
-    }
-    li{
-        margin:40px;
-        padding-right:20px;
-        font-size: 50px;
-    }
-    .main_dog{
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .main_dog img{
-        width: 400px;
-        height: 400px;
-    }
-</style>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: lime;
+        }
+
+        h1 {
+            color: rgb(208, 246, 136)
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        li {
+            margin: 40px;
+            padding-right: 20px;
+            font-size: 50px;
+        }
+
+        .main_dog {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main_dog img {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
 </head>
 
 <body>
     <div id="app">
-    <header>
-        <h1>Welcome to the dogs day</h1>
-        <nav id="nav"></nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Dog Houses</a></li>
-            <li><a href="#">Donate</a></li>
+        <header>
+            <h1>Welcome to the dogs day</h1>
+            <nav id="nav"></nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Dog Houses</a></li>
+                <li><a href="#">Donate</a></li>
 
-        </ul>
-    </header>
-    <div class="main_dog">
-        <h1>Dog of the day</h1>
-        <img :src="dog_img_url" alt="dog_image">
-        <button type="button">Change</button>
-</div>
-</div>
+            </ul>
+        </header>
+        <div class="main_dog">
+            <h1>Dog of the day</h1>
+            <img :src="dog_img_url" alt="dog_image">
+            <button type="button">Change</button>
+        </div>
+    </div>
     <!-- <div id="app">
     <h1>Welcome to the dogs day</h1>
     <img :src="dog_img_url" alt="Random Dog pictures" >
@@ -64,31 +71,32 @@
 
 
     <script>
-    const vueinst = Vue.createApp({
-    data(){
-        return{
-            dog_img_url:'',
-        };
-        },
-        methods:{
-            async get_photo(){
-            try{
-            const response = await fetch('https://dog.ceo/api/breeds/image/random');
-            const data = await response.json();
-            console.log(data.message);
-            this.dog_img_url = data.message;
+        const vueinst = Vue.createApp({
+            data() {
+                return {
+                    dog_img_url: '',
+                };
+            },
+            methods: {
+                async get_photo() {
+                    try {
+                        const response = await fetch('https://dog.ceo/api/breeds/image/random');
+                        const data = await response.json();
+                        console.log(data.message);
+                        this.dog_img_url = data.message;
+                    }
+                    catch (err) {
+                        console.log('Failed to load dog image', err);
+                    }
+                }
+            },
+            mounted() {
+                this.get_photo();
             }
-        catch(err){
-            console.log('Failed to load dog image', err);
-        }
-            }
-        },
-       async mounted(){
 
-        }
+        }).mount('#app');
 
-}).mount('#app');
-
-</script>
+    </script>
 </body>
+
 </html>
