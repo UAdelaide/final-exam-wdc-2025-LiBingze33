@@ -7,7 +7,7 @@ router.get('/dogs', async (req, res) => {
         return res.status(401); //will resolve the force browsing later
     }
   try {
-    const OwnerId = req.session.
+    const OwnerId = req.session.user.user_id;
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
