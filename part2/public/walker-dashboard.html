@@ -54,7 +54,7 @@
            alert("Cannot fetch the user")
            return
           }
-          user.value = await res.json()
+          user.value = await res.json() //if authentication is successfully processed, parse the JSON body and assign it to the reactive user variable
         }
         catch(err){
           console.log("Cannot check if i have logged in")
