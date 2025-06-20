@@ -79,7 +79,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/logout',function (req,res){//
+router.post('/logout',function (req,res){
+  //destory the session cookie
   req.session.destroy(function(err){
   if(err){
     return res.sendStatus(500);
