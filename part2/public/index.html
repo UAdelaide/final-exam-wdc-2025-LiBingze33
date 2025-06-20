@@ -55,8 +55,8 @@
               alert("Login failed due to incorrect password") //alert the user
               return; //end the funciton
             }
-            const data = await response.json(); //otherwise we 
-            const role = data.user.role;
+            const data = await response.json(); //otherwise we retrieve the response
+            const role = data.user.role;  //get the information we want from the json
             // alert(role);
             if(role === 'owner'){
               window.location.href = '/owner-dashboard.html'
