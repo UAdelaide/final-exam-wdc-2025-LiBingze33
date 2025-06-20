@@ -9,7 +9,7 @@ router.get('/dogs', async (req, res) => {
   try {
     const OwnerId = req.session.user.user_id; //since user is logged in, just retrieve the id from the session instead of making another database request
     const [dogs] = await db.query('SELECT dog_id, name FROM Dogs where owner_id = ?', [OwnerId]);
-    res.json(dogs);
+    return res.json(dogs);
   }
   catch(err){
     res.status(500).json({ error: 'Failed to fetch dogs' });
