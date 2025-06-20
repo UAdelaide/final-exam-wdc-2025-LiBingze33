@@ -87,6 +87,7 @@ router.post('/logout',function (req,res){
   }
   //clean up the cookie named 'user.sid' that was defined in app.js
   res.clearCookie('user.sid');
+  //send back 200 for the response.ok
   res.sendStatus(200);
   });
 });
