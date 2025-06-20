@@ -6,7 +6,16 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use
+app.use(session({
+  name: 'user.sid',
+  secret: 'bingze',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 1000 * 6000,
+            httpOnly: true,
+            rolling: true //reset cookie maxage on every response
+   }
+}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
