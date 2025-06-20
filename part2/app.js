@@ -15,7 +15,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 100000 * 6000} //life time of the cookies
 }));
-//Protect from 
+// Protect from force browsing, now if their identity mismatch or not logged in will all redirect to the index page
 app.get('/owner-dashboard.html', check_owners, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'owner-dashboard.html'));
 });
