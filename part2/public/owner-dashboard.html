@@ -103,7 +103,9 @@
         }
           async function checklogin() {
           try {
-            const res = await fetch('/api/walks');
+            const res = await fetch('/api/users/me'{
+              credentials:"include"
+            });
             walks.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load walk requests';
