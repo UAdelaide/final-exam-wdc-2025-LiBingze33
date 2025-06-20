@@ -104,7 +104,7 @@ app.get('/api/dogs',async (req, res) => {
 
 app.get('/api/walkrequests/open',async (req, res) => {
     try{
-        const [requests] = await db.query('SELECT wr.request_id, d_');
+        const [requests] = await db.query('SELECT wr.request_id, d.name AS dog_name, wr.requested_time,');
         res.json(dogs);
     }
     catch(err){
