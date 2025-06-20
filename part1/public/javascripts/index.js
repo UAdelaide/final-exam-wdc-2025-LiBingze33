@@ -12,7 +12,6 @@ const vueinst = Vue.createApp({
             this.dog_img_url = data.message;
             }
         catch(err){
-            alert("cannot get picture")
             console.log('Failed to load dog image', err);
         }
         }
