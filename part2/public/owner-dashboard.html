@@ -101,18 +101,18 @@
             console.log("cannot retrieve dogs", err)
           }
         }
-          async function checklogin() {
-          try {
-            const res = await fetch('/api/users/me',{
-              credentials:"include"
-            });
-            if(!res.ok && res.status === 401){
-              window.location.href = '/'
-            }
-          } catch (err) {
-            error.value = 'Failed to check login';
-          }
-        }
+        //   async function checklogin() {
+        //   try {
+        //     const res = await fetch('/api/users/me',{
+        //       credentials:"include"
+        //     });
+        //     if(!res.ok && res.status === 401){
+        //       window.location.href = '/'
+        //     }
+        //   } catch (err) {
+        //     error.value = 'Failed to check login';
+        //   }
+        // }
 
         async function logout(){ //gemerate a method for logout
           try{
@@ -168,7 +168,7 @@
         }
 
         onMounted(() => {
-          checklogin();
+          // checklogin();
           loadWalks();
           get_dogs(); //run this function when the dashboard load
         });
