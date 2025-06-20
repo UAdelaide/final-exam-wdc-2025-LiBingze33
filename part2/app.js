@@ -11,10 +11,7 @@ app.use(session({
   secret: 'bingze',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 100000 * 6000,
-            httpOnly: true,
-            rolling: true //reset cookie maxage on every response
-   }
+  cookie: { maxAge: 100000 * 6000}
 }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
