@@ -73,7 +73,7 @@ router.post('/login', async (req, res) => {
       username:rows[0].username, //might use in the future
       role:rows[0].role //will be used for this task to determine which html page to jump
     };
-    res.json({ message: 'Login successful', user: req.session.user }); //assign the whole session user object to user key in the JSON response and cl
+    res.json({ message: 'Login successful', user: req.session.user }); //assign the whole session user object to user key in the JSON response so that client side can access it later
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
