@@ -84,6 +84,9 @@ let db;
             (SELECT user_id FROM Users WHERE username = 'bobwalker'),
             5,
             'good walker, very reliable'),
+
+
+            
                 `);
         }
 
