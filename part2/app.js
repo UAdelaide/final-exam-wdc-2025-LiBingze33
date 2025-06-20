@@ -29,7 +29,7 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 const ownerRoutes = require('./routes/ownerRoutes');
 
-app.use('/api/walks', walkRoutes);
+app.use('/api/walks',check_walkers, walkRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/owners', ownerRoutes);
 app.get('/api/dogs',async (req, res) => {
