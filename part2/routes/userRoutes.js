@@ -71,7 +71,7 @@ router.post('/login', async (req, res) => {
     req.session.user = {
       user_id:rows[0].user_id, //might use in the future
       username:rows[0].username, //might use in the future
-      role:rows[0].role //
+      role:rows[0].role //will be used for this task to determine which html page to jump
     };
     res.json({ message: 'Login successful', user: req.session.user });
   } catch (error) {
