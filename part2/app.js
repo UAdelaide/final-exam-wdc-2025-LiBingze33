@@ -9,7 +9,7 @@ const app = express();
 app.use(session({
   name: 'user.sid', //name of the cookie that will be soted in the browser
   secret: 'bingze', //secret key
-  resave: false,
+  resave: false, //
   saveUninitialized: false,
   cookie: { maxAge: 100000 * 6000} //life time of the cookies
 }));
