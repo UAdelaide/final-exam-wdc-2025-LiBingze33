@@ -51,7 +51,9 @@
           const res = await fetch('/api/user/me',{credentials:"include"});
           if(!res.ok){
            alert("Cannot fetch the user")
+           return
           }
+          
         }
         catch(err){
           console.log("Cannot check if i have logged in")
