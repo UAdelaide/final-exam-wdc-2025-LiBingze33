@@ -46,7 +46,9 @@
         const message = ref('');
         const error = ref('');
         const user = 3;
-        
+      async function getCurrentUser() {
+
+}
       async function logout(){ //gemerate a method for logout
           try{
             const response = await fetch('/api/users/logout',
