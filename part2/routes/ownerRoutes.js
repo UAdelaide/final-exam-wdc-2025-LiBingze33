@@ -3,7 +3,9 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/dogs', async (req, res) => {
-    if(!)
+    if(!req.session.user){
+        return res.status(401)
+    }
   try {
     const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
     res.json(rows);
