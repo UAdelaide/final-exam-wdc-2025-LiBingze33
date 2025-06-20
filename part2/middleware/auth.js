@@ -3,6 +3,6 @@ function check_owners(req,res,next){
         next();
     }
     else{
-        res.status(403).
+        res.status(403).redirect('/');
     }
 }
