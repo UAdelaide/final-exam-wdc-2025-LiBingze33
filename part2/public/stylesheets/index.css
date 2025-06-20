@@ -1,11 +1,11 @@
 #login{
-    width: 400px;
+    width: 600px;
 }
 #login label{
   display:block;
   margin-bottom:5px ;
   padding: 10px;
-  font
+  font-size: large;
 }
 #login input{
   display:block;
