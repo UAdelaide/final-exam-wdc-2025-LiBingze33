@@ -9,7 +9,7 @@ const app = express();
 app.use(session({
   name: 'user.sid', //name of the cookie that will be soted in the browser
   secret: 'bingze', //secret key
-  cookie: { maxAge: 100000 * 6000}
+  cookie: { maxAge: 100000 * 6000} //life time of the cookie
 }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
