@@ -89,7 +89,9 @@
         const error = ref('');
         async function get_dogs(){
           try{
-            const res = await fetch('/api/owners/dogs',)
+            const res = await fetch('/api/owners/dogs',{
+              credentials:'include'
+            });
           }
         }
 
