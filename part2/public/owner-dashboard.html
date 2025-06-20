@@ -83,7 +83,7 @@
         async function logout(){ //gemerate a method for logout
           try{
             const response = await fetch('/api/users/logout',
-              {method: 'POST'}
+              {method: 'POST'}    //make sure it is a post, as we are not sending anything back, the header could be ignored
             )
             if(response.ok){
               window.location.href = '/';
