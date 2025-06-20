@@ -79,6 +79,7 @@
       methods:{
         async get_dogs(){
           try{
+            //get all the dogs from the database first
             const response = await fetch('/api/dogs');
             const data = await response.json();
              for(let dog of data){
