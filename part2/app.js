@@ -15,6 +15,9 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 100000 * 6000} //life time of the cookies
 }));
+app.get('/wishlist.html', requireLogin, (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'wishlist.html'));
+});
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
