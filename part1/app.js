@@ -83,7 +83,7 @@ let db;
             (SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Toutou') AND status = 'completed'),
             '2025-06-10 08:00:00', 30, 'Parklands',
             'open'),
-
+            (SELECT USER)
                 `);
         }
 
