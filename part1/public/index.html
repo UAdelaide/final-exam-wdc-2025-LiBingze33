@@ -23,5 +23,31 @@
     <h1>Welcome to the dogs day</h1>
     <img :src="dog_img_url" alt="Random Dog pictures" >
     </div> -->
+
+
+
+    <script>
+    const vueinst = Vue.createApp({
+    data(){
+        return{
+            dog_img_url:'',
+        };
+        },
+       async mounted(){
+        try{
+
+            const response = await fetch('https://dog.ceo/api/breeds/image/random');
+            const data = await response.json();
+            console.log(data.message);
+            this.dog_img_url = data.message;
+            }
+        catch(err){
+            console.log('Failed to load dog image', err);
+        }
+        }
+
+}).mount('#app');
+
+</script>
 </body>
 </html>
