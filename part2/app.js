@@ -7,8 +7,8 @@ const app = express();
 
 // Middleware
 app.use(session({
-  name: 'user.sid',
-  secret: 'bingze',
+  name: 'user.sid', //name of the cookie that will be soted in the browser
+  secret: 'bingze', 
   resave: false,
   saveUninitialized: false,
   cookie: { maxAge: 100000 * 6000}
