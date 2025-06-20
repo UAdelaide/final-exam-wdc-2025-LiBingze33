@@ -49,7 +49,7 @@
         const user = ref('');//instead of hard code the user to 3, use ref to make the user reactive and dynamic
       async function getCurrentUser() {
         try{
-          const res = await fetch('/api/users/me',{credentials:"include"}); //send back the cookies for authentication
+          const res = await fetch('/api/users/me',{credentials:"include"}); //send back the session cookies for authentication
           if(!res.ok){
            alert("Cannot fetch the user")
            return
