@@ -80,7 +80,9 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout',function (req,res){
+  req.session.destroy(function(err){
 
+  })
 });
 
 module.exports = router;
