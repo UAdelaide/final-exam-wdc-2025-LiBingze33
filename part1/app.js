@@ -63,8 +63,8 @@ let db;
       `);
         }
 
-        const [dog_count] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-        if (dog_count[0].count === 0) {
+        const [request_count] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        if (request_count_count[0].count === 0) {
             await db.execute(`
             INSERT INTO Dogs (owner_id, name, size) VALUES
             ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max' , 'medium'),
