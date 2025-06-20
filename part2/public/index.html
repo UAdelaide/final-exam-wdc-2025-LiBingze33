@@ -36,14 +36,14 @@
       data() {
         return {
           message: 'Welcome to the Dog Walking Service!',
-          username:'',
+          username:'',  //will sync with the input box
           password:''
         };
       },
       methods:{
         async login(){
           try{
-            const response = await fetch('/api/users/login',{
+            const response = await fetch('/api/users/login',{ 
               method:'POST',
               headers: {'Content-Type':'application/json'},
               body:JSON.stringify({
