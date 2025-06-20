@@ -83,6 +83,7 @@
               try{
               const photo = await fetch('https://dog.ceo/api/breeds/image/random');
               const photo_data = await photo.json();
+              //assign the url to the 
               dog.photo_url = photo_data.message;
               }
               catch(err){
