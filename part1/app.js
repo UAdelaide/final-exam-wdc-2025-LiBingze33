@@ -41,7 +41,7 @@ let db;
         // `);
 
         // Insert data if table is empty
-        const [user_count] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        const [user_count] = await db.query('SELECT COUNT(*) AS count FROM Users');
         if (user_count[0].count === 0) {
             await db.execute(`
             INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner'),
@@ -52,7 +52,7 @@ let db;
 
       `);
         }
-        const [dog_count] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+        const [dog_count] = await db.query('SELECT COUNT(*) AS count FROM Dogs');
         if (dog_count[0].count === 0) {
             await db.execute(`
             INSERT INTO Dogs (owner_id, name, size) VALUES
@@ -64,7 +64,7 @@ let db;
       `);
         }
 
-        const [request_count] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+        const [request_count] = await db.query('SELECT COUNT(*) AS count FROM WalkRequests');
         if (request_count.count[0].count === 0) {
             await db.execute(`
             INSERT INTO Dogs (owner_id, name, size) VALUES
