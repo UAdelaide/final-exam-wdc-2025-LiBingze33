@@ -11,11 +11,7 @@
   display:block;
   margin-bottom:5px ;
 }
-body {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-}
+
 img{
     width: 300px;
     height:300px;
