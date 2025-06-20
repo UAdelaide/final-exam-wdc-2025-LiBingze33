@@ -89,7 +89,7 @@
 
         async function applyToWalk(requestId) {
           try {
-            alert
+            alert(user.value.user_id);
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
