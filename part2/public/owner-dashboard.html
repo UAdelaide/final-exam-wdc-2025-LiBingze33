@@ -30,7 +30,7 @@
               <option value="" selected disabled> --Choose a dog --</option>  <!-- A fake selected component work as a placeholder -->
                <!-- was struggling to debug the value, as it is used for another post method submission -->
               <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id"> {{dog.name}}</option>
-
+               <!-- Replace the dog_id -->
               </select>
           </div>
           <div class="mb-3">
