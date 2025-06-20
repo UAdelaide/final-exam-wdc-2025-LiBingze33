@@ -93,6 +93,8 @@
             data() {
                 return {
                     dog_img_url: '',
+                    dog_img_url2: '',
+
                 };
             },
             methods: {
@@ -100,11 +102,9 @@
                     try {
                         const response = await fetch('https://dog.ceo/api/breeds/image/random');
                         const data = await response.json();
-                        this.dog_img_url = data.message;
-                        const response = await fetch('https://dog.ceo/api/breeds/image/random');
-                        const data = await response.json();
-                        console.log(data.message);
-                        this.dog_img_url = data.message;
+                        const response2 = await fetch('https://dog.ceo/api/breeds/image/random');
+                        const data2 = await response.json();
+                        this.dog_img_url2 = data.message;
                     }
                     catch (err) {
                         console.log('Failed to load dog image', err);
