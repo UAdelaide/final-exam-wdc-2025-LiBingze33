@@ -104,7 +104,7 @@
                         const data = await response.json();
                         const response2 = await fetch('https://dog.ceo/api/breeds/image/random');
                         const data2 = await response.json();
-                        this.dog_img_url2 = data.message;
+                        this.dog_img_url = data.message;
                     }
                     catch (err) {
                         console.log('Failed to load dog image', err);
