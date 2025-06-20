@@ -49,7 +49,7 @@
       async function getCurrentUser() {
         try{
           const res = await fetch('/api/user/me',{credentials:"include"});
-          if()
+          if(!res.ok)
         }
         catch(err){
           console.log("Cannot check if i have logged in")
