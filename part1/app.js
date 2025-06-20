@@ -91,7 +91,7 @@ let db;
 
 app.get('/api/dogs',async (req, res) => {
     try{
-        const [dogs] = await db.query()
+        const [dogs] = await db.query('SELECT d')
     }
 
 });
