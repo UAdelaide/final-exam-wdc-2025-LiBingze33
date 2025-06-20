@@ -10,50 +10,50 @@ var app = express();
 let db;
 
 (async () => {
-  try {
-    // Connect to MySQL without specifying a database
-    const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '' // Set your MySQL root password
-    });
+    try {
+        // Connect to MySQL without specifying a database
+        const connection = await mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: '' // Set your MySQL root password
+        });
 
-    // Create the database if it doesn't exist
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
-    await connection.end();
+        // Create the database if it doesn't exist
+        await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+        await connection.end();
 
-    // Now connect to the created database
-    db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'DogWalkService'
-    });
+        // Now connect to the created database
+        db = await mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: '',
+            database: 'DogWalkService'
+        });
 
-    // Create a table if it doesn't exist
-    // await db.execute(`
-    //   CREATE TABLE IF NOT EXISTS books (
-    //     id INT AUTO_INCREMENT PRIMARY KEY,
-    //     title VARCHAR(255),
-    //     author VARCHAR(255)
-    //   )
-    // `);
+        // Create a table if it doesn't exist
+        // await db.execute(`
+        //   CREATE TABLE IF NOT EXISTS books (
+        //     id INT AUTO_INCREMENT PRIMARY KEY,
+        //     title VARCHAR(255),
+        //     author VARCHAR(255)
+        //   )
+        // `);
 
-    // Insert data if table is empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-    if (rows[0].count === 0) {
-      await db.execute(`
-INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-('carol123', 'carol@example.com', 'hashed789', 'owner'),
-('bingze', 'bingze@example.com', 'hashed789', 'owner'),
-('bingze123', 'bingze123@example.com', 'hashed789', 'owner');
+        // Insert data if table is empty
+        const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+        if (rows[0].count === 0) {
+            await db.execute(`
+            INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+            ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+            ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+            ('bingze', 'bingze@example.com', 'hashed789', 'owner'),
+            ('bingze123', 'bingze123@example.com', 'hashed789', 'owner');
 
       `);
+        }
+    } catch (err) {
+        console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
     }
-  } catch (err) {
-    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-  }
 })();
 
 
