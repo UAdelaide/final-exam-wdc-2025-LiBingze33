@@ -48,6 +48,7 @@
             padding: 20px;
             background-color: blue;
         }
+        
     </style>
 </head>
 
@@ -63,12 +64,14 @@
 
             </ul>
         </header>
+        <div class="frame">
         <div class="main_dog">
             <h1>Dog of the day</h1>
             <img :src="dog_img_url" alt="dog_image">
             <button @click="get_photo" type="button">Change</button>
         </div>
         <div class="side_bar"></div>
+    </div>
     </div>
     <!-- <div id="app">
     <h1>Welcome to the dogs day</h1>
