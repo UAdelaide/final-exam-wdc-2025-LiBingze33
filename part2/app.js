@@ -11,7 +11,7 @@ app.use(session({
   secret: 'bingze',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 1000 * 6000,
+  cookie: { maxAge: 100000 * 6000,
             httpOnly: true,
             rolling: true //reset cookie maxage on every response
    }
