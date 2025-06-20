@@ -89,7 +89,10 @@ let db;
 
 })();
 
-app.get('/api/dogs',async (req))
+app.get('/api/dogs',async (req, res) => {
+
+
+});
 
 
 
