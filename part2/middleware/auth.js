@@ -3,7 +3,7 @@ function check_owners(req,res,next){
         next();
     }
     else{
-        res.status(403).redirect('/');
+        res.redirect('/');
     }
 }
 function check_walkers(req,res,next){
