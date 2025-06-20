@@ -6,7 +6,8 @@ const vueinst = Vue.createApp({
         },
        async mounted(){
             const response = await fetch('https://dog.ceo/dog-api/documentation/random');
-            const data = await response.json
+            const data = await response.json;
+            this dog_img_url = data.
         }
 
 }).mount('#app');
