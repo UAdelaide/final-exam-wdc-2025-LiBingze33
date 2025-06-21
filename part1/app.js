@@ -201,7 +201,7 @@ app.get('/api/walkers/summary', async (req, res) => {
             `
 
         );
-        res.json(summary);
+        res.status(200).json(summary);
     }
     catch (err) {
         console.log(err);
