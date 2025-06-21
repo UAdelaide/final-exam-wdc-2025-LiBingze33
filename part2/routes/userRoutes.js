@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
-    }//if length is zero then no
+    }//if length is zero then no password or username matched
     //if information is correct we can store user information in the session for authentication and for later time to check for the roles and assign different webpage to jump.
     req.session.user = {
       user_id: rows[0].user_id, //might use in the future
