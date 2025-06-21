@@ -33,10 +33,14 @@ let db;
 
         // Create a table if it doesn't exist
         await db.execute(`
-          CREATE TABLE IF NOT EXISTS books (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            title VARCHAR(255),
-            author VARCHAR(255)
+          CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role ENUM('owner', 'walker') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
           )
         `);
 
@@ -118,32 +122,32 @@ let db;
 
 })();
 
-app.get('/api/dogs',async (req, res) => {
-    try{
+app.get('/api/dogs', async (req, res) => {
+    try {
         const [dogs] = await db.query('SELECT d.name AS dog_name, d.size, u.username AS owner_username FROM Dogs d JOIN Users u ON d.owner_id = u.user_id');
         res.json(dogs);
     }
-    catch(err){
+    catch (err) {
         console.log(err);
-        res.status(500).json({error:'cannot fetch dogs'});
+        res.status(500).json({ error: 'cannot fetch dogs' });
     }
 
 });
 
-app.get('/api/walkrequests/open',async (req, res) => {
-    try{
+app.get('/api/walkrequests/open', async (req, res) => {
+    try {
         const [requests] = await db.query("SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username FROM WalkRequests wr JOIN Dogs d ON wr.dog_id = d.dog_id JOIN Users u ON d.owner_id = u.user_id WHERE wr.status ='open'");
         res.json(requests);
     }
-    catch(err){
+    catch (err) {
         console.log(err);
-        res.status(500).json({error:'cannot fetch requests'});
+        res.status(500).json({ error: 'cannot fetch requests' });
     }
 
 });
 
-app.get('/api/walkers/summary',async (req, res) => {
-    try{
+app.get('/api/walkers/summary', async (req, res) => {
+    try {
         const [summary] = await db.query(`SELECT u.username AS walker_username, COUNT(wr.rating) AS total_ratings, ROUND(AVG(wr.rating),1) AS average_rating, COUNT(rq.request_id) AS completed_walks
             FROM Users u
             LEFT JOIN WalkRatings wr ON u.user_id = wr.walker_id
@@ -155,9 +159,9 @@ app.get('/api/walkers/summary',async (req, res) => {
         );
         res.json(summary);
     }
-    catch(err){
+    catch (err) {
         console.log(err);
-        res.status(500).json({error:'cannot fetch summary'});
+        res.status(500).json({ error: 'cannot fetch summary' });
     }
 
 });
