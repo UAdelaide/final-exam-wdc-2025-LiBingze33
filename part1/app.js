@@ -40,6 +40,10 @@ let db;
         //   )
         // `);
 
+
+
+
+        
         // Insert data if table is empty
         const [user_count] = await db.query('SELECT COUNT(*) AS count FROM Users');
         if (user_count[0].count === 0) {
