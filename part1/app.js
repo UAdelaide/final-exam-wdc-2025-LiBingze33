@@ -40,7 +40,7 @@ let db;
             password_hash VARCHAR(255) NOT NULL,
             role ENUM('owner', 'walker') NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
-          
+
         `);
         await db.execute(`
           CREATE TABLE IF NOT EXISTS Dogs (
@@ -149,8 +149,7 @@ let db;
             (SELECT user_id FROM Users WHERE username = 'bingze123'),
             4,
             'Good job and take care of my guodong very well'
-            );
-`);
+            );`);
         }
 
 
