@@ -32,18 +32,18 @@ let db;
         });
 
         // Create a table if it doesn't exist
-        // await db.execute(`
-        //   CREATE TABLE IF NOT EXISTS books (
-        //     id INT AUTO_INCREMENT PRIMARY KEY,
-        //     title VARCHAR(255),
-        //     author VARCHAR(255)
-        //   )
-        // `);
+        await db.execute(`
+          CREATE TABLE IF NOT EXISTS books (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            title VARCHAR(255),
+            author VARCHAR(255)
+          )
+        `);
 
 
 
 
-        
+
         // Insert data if table is empty
         const [user_count] = await db.query('SELECT COUNT(*) AS count FROM Users');
         if (user_count[0].count === 0) {
